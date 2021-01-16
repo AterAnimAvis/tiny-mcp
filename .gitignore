@@ -1,0 +1,15 @@
+private.properties
+bin/
+*.launch
+build/
+.classpath
+.project
+.settings
+.metadata
+.gradle
+eclipse/
+.pmd
+.DS_Store
+.idea/
+.cache/
+.generated/

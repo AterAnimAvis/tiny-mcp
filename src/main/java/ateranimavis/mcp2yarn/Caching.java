@@ -1,0 +1,26 @@
+package ateranimavis.mcp2yarn;
+
+import java.io.File;
+import java.io.IOException;
+
+import ateranimavis.mcp2yarn.io.IOConsumer;
+
+public interface Caching {
+
+    File CACHE = new File(".cache");
+
+    static File cached(String path, String type, IOConsumer<File> generator) throws IOException {
+        if (!CACHE.mkdirs()) throw new AssertionError("Could not make Cache Directory");
+        return cached(new File(CACHE, path + "." + type), generator);
+    }
+
+    static File cached(File cached, IOConsumer<File> generator) throws IOException {
+        if (cached.exists()) return cached;
+
+        generator.accept(cached);
+
+        if (!cached.exists()) throw new AssertionError();
+
+        return cached;
+    }
+}
