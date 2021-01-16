@@ -52,7 +52,7 @@ val provideMappingsJar = tasks.register("provideMappingsJar") {
 }
 
 val install = tasks.register("install") {
-    dependsOn("publish") // publishToMavenLocal
+    dependsOn("publish")
     group = "mappings"
 }
 

@@ -27,7 +27,7 @@ public class Main {
         String yarnVersion = args.length > 4 ? args[4] : ask("Yarn Version", "1.16.4");
         String yarnBuild = args.length > 5 ? args[5] : ask("Yarn Build", "9");
 
-        if (!GENERATED.mkdirs()) throw new AssertionError("Could not make Generated Directory");
+        GENERATED.mkdirs();
 
         try (ZipOutputStream stream = new ZipOutputStream(new FileOutputStream(new File(GENERATED, "mappings.jar")))) {
             Writer writer = new OutputStreamWriter(stream);

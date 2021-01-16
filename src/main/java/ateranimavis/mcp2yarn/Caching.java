@@ -10,7 +10,7 @@ public interface Caching {
     File CACHE = new File(".cache");
 
     static File cached(String path, String type, IOConsumer<File> generator) throws IOException {
-        if (!CACHE.mkdirs()) throw new AssertionError("Could not make Cache Directory");
+        CACHE.mkdirs();
         return cached(new File(CACHE, path + "." + type), generator);
     }
 

@@ -11,7 +11,7 @@ public interface Urls {
 
     String SRG = "https://raw.githubusercontent.com/MinecraftForge/MCPConfig/master/versions/{mcp_type}/{mcp_version}/joined.tsrg";
     String MCP = "https://files.minecraftforge.net/maven/de/oceanlabs/mcp/mcp_{mcp_channel}/{mcp_mapping}/mcp_{mcp_channel}-{mcp_mapping}.zip";
-    String YARN = "http://maven.modmuss50.me/net/fabricmc/yarn/{yarn_version}+build.{yarn_build}/yarn-{yarn_version}+build.{yarn_build}.jar";
+    String YARN = "https://maven.fabricmc.net/net/fabricmc/yarn/{yarn_version}+build.{yarn_build}/yarn-{yarn_version}+build.{yarn_build}.jar";
 
     static String srg(String mcp_type, String mcp_version) {
         return SRG.replace("{mcp_type}", mcp_type).replace("{mcp_version}", mcp_version);
