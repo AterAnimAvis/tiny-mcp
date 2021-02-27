@@ -1,9 +1,9 @@
-package ateranimavis.mcp2yarn;
+package ateranimavis.tiny_mcp;
 
 import java.io.File;
 import java.io.IOException;
 
-import ateranimavis.mcp2yarn.io.IOConsumer;
+import ateranimavis.tiny_mcp.io.IOConsumer;
 
 public interface Caching {
 

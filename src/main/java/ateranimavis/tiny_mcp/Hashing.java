@@ -1,4 +1,4 @@
-package ateranimavis.mcp2yarn;
+package ateranimavis.tiny_mcp;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

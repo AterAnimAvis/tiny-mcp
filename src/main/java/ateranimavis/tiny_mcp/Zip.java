@@ -1,4 +1,4 @@
-package ateranimavis.mcp2yarn;
+package ateranimavis.tiny_mcp;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-import ateranimavis.mcp2yarn.io.IORunner;
+import ateranimavis.tiny_mcp.io.IORunner;
 
 public interface Zip {
 

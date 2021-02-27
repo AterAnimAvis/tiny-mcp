@@ -20,7 +20,7 @@ val yarnBuild : String by extra
 
 /* ======================================================================================================= Setup ==== */
 
-group="ateranimavis.mcp2yarn"
+group="ateranimavis.tiny-mcp"
 version="1.0-SNAPSHOT"
 
 /* ================================================================================================ Dependencies ==== */
@@ -50,7 +50,7 @@ val generateMappingsJar = tasks.register<JavaExec>("generateMappingsJar") {
     group = "mappings"
     description = "Generates the Mappings Jar"
 
-    mainClass.set("ateranimavis.mcp2yarn.Main")
+    mainClass.set("ateranimavis.tiny_mcp.Main")
     classpath = sourceSets.main.get().runtimeClasspath
     args = listOf(mcpType, mcpVersion, mappingsChannel, mappingsVersion, yarnVersion, yarnBuild)
 }

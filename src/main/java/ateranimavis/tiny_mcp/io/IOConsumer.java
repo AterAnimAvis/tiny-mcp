@@ -1,4 +1,4 @@
-package ateranimavis.mcp2yarn.io;
+package ateranimavis.tiny_mcp.io;
 
 import java.io.IOException;
 

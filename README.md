@@ -1,5 +1,7 @@
-MCP Mappings to Yarn (Tiny v1)
+Tiny-MCP
 ---
+### MCP Mappings to Yarn (Tiny v1)
+
 Generates Tiny Mappings based on MCP Mappings Releases
 
 The source code for this project is based on [Devoldefy](https://github.com/Runemoro/Devoldefy) by [Runemoro](https://github.com/Runemoro/)
