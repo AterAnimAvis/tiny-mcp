@@ -8,6 +8,9 @@ import java.io.Writer;
 import java.util.Scanner;
 import java.util.zip.ZipOutputStream;
 
+import net.minecraftforge.srgutils.IMappingFile;
+import net.minecraftforge.srgutils.INamedMappingFile;
+
 public class Main {
 
     private static final File GENERATED = new File(".generated");
@@ -80,11 +83,12 @@ public class Main {
     }
 
     private static void run(String srgUrl, String mcpUrl, String yarnUrl, Writer writer) throws IOException {
-        Mappings srg = Mappings.readSrg(srgUrl, mcpUrl);
-        Mappings official2intermediary =  Mappings.readTiny(yarnUrl);
-        Mappings intermediary2srg = official2intermediary.invert().chain(srg);
+        IMappingFile srg = Mappings.readSrg(srgUrl, mcpUrl);
+        INamedMappingFile yarn = Mappings.readTiny(yarnUrl);
+
+        IMappingFile official2intermediary =  Mappings.getOfficial2Intermediary(yarn);
+        IMappingFile intermediary2srg = official2intermediary.reverse().chain(srg);
 
         TinyRemapper.remapTiny(yarnUrl, official2intermediary, intermediary2srg, writer);
     }
-
 }

@@ -23,6 +23,20 @@ val yarnBuild : String by extra
 group="ateranimavis.mcp2yarn"
 version="1.0-SNAPSHOT"
 
+/* ================================================================================================ Dependencies ==== */
+
+repositories {
+    maven {
+        url = uri("https://files.minecraftforge.net/maven")
+    }
+}
+
+dependencies {
+    implementation("net.minecraftforge:srgutils:0.4.1")
+}
+
+/* ======================================================================================================= Tasks ==== */
+
 val mappingsJar = File(".generated/mappings.jar")
 
 val deleteMappingsJar = tasks.register<Delete>("deleteMappingsJar") {

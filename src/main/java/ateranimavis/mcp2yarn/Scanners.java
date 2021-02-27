@@ -6,10 +6,6 @@ import java.util.Scanner;
 
 public interface Scanners {
 
-    static Scanner srgFile(String srgUrl) throws IOException {
-        return new Scanner(Urls.download(srgUrl, "tsrg"));
-    }
-
     static Scanner mappingsMethods(File mappings) throws IOException {
         return new Scanner(Zip.extract(mappings, "methods.csv", "csv"));
     }
@@ -19,6 +15,6 @@ public interface Scanners {
     }
 
     static Scanner yarnMappings(String yarnUrl) throws IOException {
-        return new Scanner(Zip.extract(Urls.download(yarnUrl, "jar"), "mappings/mappings.tiny", "tiny"));
+        return new Scanner(Mappings.getYarnMappings(yarnUrl));
     }
 }
