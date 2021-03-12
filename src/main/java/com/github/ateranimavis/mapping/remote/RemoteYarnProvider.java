@@ -2,8 +2,8 @@ package com.github.ateranimavis.mapping.remote;
 
 import java.io.IOException;
 
-import com.github.ateranimavis.mapping.base.BaseProvider;
 import com.github.ateranimavis.mapping.Mappings;
+import com.github.ateranimavis.mapping.base.BaseProvider;
 import com.github.ateranimavis.utils.Lazy;
 import net.minecraftforge.srgutils.IMappingFile;
 

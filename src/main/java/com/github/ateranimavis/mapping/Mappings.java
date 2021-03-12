@@ -3,9 +3,6 @@ package com.github.ateranimavis.mapping;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import com.github.ateranimavis.mapping.IMappingProvider;
-import com.github.ateranimavis.mapping.MappingsDownload;
-import com.github.ateranimavis.mapping.RenamedMappingsProvider;
 import com.github.ateranimavis.mapping.remote.RemoteMCPRenamer;
 import com.github.ateranimavis.mapping.remote.RemoteSrgProvider;
 import com.github.ateranimavis.mapping.remote.RemoteYarnProvider;
