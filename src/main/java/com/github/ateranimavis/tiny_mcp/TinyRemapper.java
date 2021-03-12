@@ -44,18 +44,6 @@ public interface TinyRemapper {
         }
         writer.append(h).append(NL);
 
-        //for (IMappingFile.IClass clazz : intermediary2srg.getClasses()) {
-        //    write(writer, new String[] { "c", clazz.getOriginal(), clazz.getMapped() });
-        //
-        //    for (IMappingFile.IMethod method : clazz.getMethods()) {
-        //        write(writer, new String[] { "", "m", method.getDescriptor(), method.getOriginal(), method.getMapped() });
-        //    }
-        //
-        //    for (IMappingFile.IField field : clazz.getFields()) {
-        //        write(writer, new String[] { "", "f", field.getDescriptor(), field.getOriginal(), field.getMapped() });
-        //    }
-        //}
-
         IMappingFile.IClass clazz = null;
 
         while (scanner.hasNextLine()) {
@@ -163,12 +151,4 @@ public interface TinyRemapper {
         for (int i = 1; i < line.length; i++) writer.append("\t").append(line[i]);
         writer.append(NL);
     }
-
-    static void write(Writer writer, String[] line, String prefix) throws IOException {
-        writer.append(prefix);
-        writer.append(line[0]);
-        for (int i = 1; i < line.length; i++) writer.append("\t").append(line[i]);
-        writer.append(NL);
-    }
-
 }

@@ -13,10 +13,6 @@ public interface Urls {
         return Caching.cached(cached, (destination) -> downloadFileFromUrl(url, destination));
     }
 
-    static Path uncachedDownload(String cached, String url) throws IOException {
-        return Caching.uncached(cached, (path) -> downloadFileFromUrl(url, path));
-    }
-
     static void downloadFileFromUrl(String url, Path destination) throws IOException {
         try (InputStream in = new URL(url).openStream()) {
             Files.copy(in, destination, StandardCopyOption.REPLACE_EXISTING);

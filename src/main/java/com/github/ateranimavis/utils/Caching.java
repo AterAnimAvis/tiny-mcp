@@ -27,19 +27,4 @@ public interface Caching {
 
         return cached;
     }
-
-    static Path uncached(String path, IOConsumer<Path> generator) throws IOException {
-        return uncached(CACHE.resolve(path), generator);
-    }
-
-    static Path uncached(Path cached, IOConsumer<Path> generator) throws IOException {
-        Files.createDirectories(cached.getParent());
-
-        System.out.printf("Caching: %s is marked as not cacheable, running generator%n", cached);
-        generator.accept(cached);
-
-        if (!Files.exists(cached)) throw new AssertionError("Generator did not generate the requested file");
-
-        return cached;
-    }
 }
