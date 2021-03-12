@@ -1,4 +1,4 @@
-package ateranimavis.tiny_mcp.io;
+package com.github.ateranimavis.io;
 
 import java.io.IOException;
 

@@ -10,7 +10,9 @@ The source code for this project is based on [Devoldefy](https://github.com/Rune
 
 ### Usage
 
-Edit `gradle.properties` and then run `gradlew install` to install the mappings to your local maven
+Edit `gradle.properties` and then run `gradlew install` to install the generated mappings to your local maven
+
+You can disable the generation of TinyV1 or TinyV2 mappings by changing the appropriate `generateV` in the `gradle.properties` 
 
 Add the local repository to your `build.gradle.kts`
 ```kotlin

@@ -1,26 +1,26 @@
-package ateranimavis.tiny_mcp;
+package com.github.ateranimavis.utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Writer;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-import ateranimavis.tiny_mcp.io.IORunner;
+import com.github.ateranimavis.io.IORunner;
 
 public interface Zip {
 
-    static File extract(File zip, String path, String type) throws IOException {
-        return Caching.cached(Hashing.hash(zip.getName() + path), type, (file) -> extractFileFromZip(zip, path, file));
+    static Path extract(String description, Path zip, String path) throws IOException {
+        return Caching.cached("extracted/" + description, (destination) -> extractFileFromZip(zip, path, destination));
     }
 
-    static void extractFileFromZip(File zip, String path, File destination) throws IOException {
-        try (ZipFile zipFile = new ZipFile(zip)) {
+    static void extractFileFromZip(Path zip, String path, Path destination) throws IOException {
+        try (ZipFile zipFile = new ZipFile(zip.toFile())) {
             InputStream is = null;
 
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
@@ -33,7 +33,7 @@ public interface Zip {
             }
 
             if (is != null) {
-                Files.copy(is, destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(is, destination, StandardCopyOption.REPLACE_EXISTING);
             }
         }
     }
