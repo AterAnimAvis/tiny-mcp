@@ -6,6 +6,8 @@ Generates Tiny Mappings based on MCP Mappings Releases
 
 The source code for this project is based on [Devoldefy](https://github.com/Runemoro/Devoldefy) by [Runemoro](https://github.com/Runemoro/)
 
+As of 1.17 Official (+ Parchment) are the better (non janky) alternative, since Forge has started using Official for Class Names
+
 ### **Warning: This is *very dumb*, Use at your own risk**
 
 ### Usage
